@@ -1,7 +1,5 @@
 package com.example.stockapi.stock;
 
-import com.example.stockapi.stock.Stock;
-import com.example.stockapi.stock.StockRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
