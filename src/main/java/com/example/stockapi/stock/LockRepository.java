@@ -1,7 +1,7 @@
 package com.example.stockapi.stock;
 
 public interface LockRepository {
-    Integer getLock(String key);
+    boolean getLock(String key);
 
     void releaseLock(String key);
 }

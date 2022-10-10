@@ -20,8 +20,9 @@ public class NamedLockRepository implements LockRepository {
         this.jdbcTemplate = new JdbcTemplate(new HikariDataSource(configuration));
     }
 
-    public Integer getLock(@Param("key") String key) {
-        return jdbcTemplate.queryForObject("SELECT get_lock('" + key + "', 1000)", Integer.class);
+    public boolean getLock(@Param("key") String key) {
+        Integer result = jdbcTemplate.queryForObject("SELECT get_lock('" + key + "', 1000)", Integer.class);
+        return result == 1;
     }
 
     public void releaseLock(@Param("key") String key) {

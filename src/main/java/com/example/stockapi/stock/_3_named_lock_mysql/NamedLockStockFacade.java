@@ -20,7 +20,7 @@ public class NamedLockStockFacade implements StockFacade {
 
     public void deduction(String productName) {
         try {
-            Integer result = namedLockRepository.getLock(productName.replace("상품", "product"));
+            boolean result = namedLockRepository.getLock(productName.replace("상품", "product"));
             LOG.info("get_lock() result = {}", result);
             namedLockStockService.deduction(productName);
         } finally {
