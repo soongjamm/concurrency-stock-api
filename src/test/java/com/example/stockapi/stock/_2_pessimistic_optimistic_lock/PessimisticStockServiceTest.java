@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 class PessimisticStockServiceTest extends ConcurrencyTestTemplate {
 
     @Autowired
-    private PessimisticLockService pessimisticLockService;
+    private PessimisticLockStockService pessimisticLockStockService;
 
     @Test
     @DisplayName("pessimistic lock : 1sec 82ms")
@@ -19,7 +19,7 @@ class PessimisticStockServiceTest extends ConcurrencyTestTemplate {
 
         for (int i = 0; i < initQuantity; i++) {
             es.submit(() -> {
-                pessimisticLockService.deduction("상품1");
+                pessimisticLockStockService.deduction("상품1");
                 countDownLatch.countDown();
             });
         }

@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class SynchronizedWithTransactionalService implements StockManagementService {
+public class SynchronizedWithTransactionalStockService implements StockManagementService {
 
     private final NormalStockRepository normalStockRepository;
 
-    public SynchronizedWithTransactionalService(NormalStockRepository normalStockRepository) {
+    public SynchronizedWithTransactionalStockService(NormalStockRepository normalStockRepository) {
         this.normalStockRepository = normalStockRepository;
     }
 

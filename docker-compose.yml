@@ -8,3 +8,9 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: stock
     container_name: mysql
+
+  redis:
+    image: redis:alpine
+    command: redis-server
+    ports:
+      - "6379:6379"

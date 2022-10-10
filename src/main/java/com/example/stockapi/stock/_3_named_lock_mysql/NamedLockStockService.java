@@ -8,11 +8,11 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class NamedLockService implements StockManagementService {
+public class NamedLockStockService implements StockManagementService {
 
     private final StockRepository stockRepository;
 
-    public NamedLockService(StockRepository stockRepository) {
+    public NamedLockStockService(StockRepository stockRepository) {
         this.stockRepository = stockRepository;
     }
 

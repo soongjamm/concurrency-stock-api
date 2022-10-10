@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.LockModeType;
 
 @Repository
-public interface OptimisticLockRepository extends JpaRepository<OptimisticLockStock, Long> {
+public interface OptimisticLockStockRepository extends JpaRepository<OptimisticLockStock, Long> {
 
     @Lock(LockModeType.OPTIMISTIC)
     Stock findByProductName(String productName);

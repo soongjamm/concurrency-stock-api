@@ -6,12 +6,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class PessimisticLockService implements StockManagementService {
+public class PessimisticLockStockService implements StockManagementService {
 
-    private final PessimisticLockRepository stockRepository;
+    private final PessimisticLockStockRepository stockRepository;
 
-    public PessimisticLockService(PessimisticLockRepository pessimisticLockRepository) {
-        this.stockRepository = pessimisticLockRepository;
+    public PessimisticLockStockService(PessimisticLockStockRepository pessimisticLockStockRepository) {
+        this.stockRepository = pessimisticLockStockRepository;
     }
 
     @Override

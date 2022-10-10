@@ -5,11 +5,11 @@ import com.example.stockapi.stock.StockManagementService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SynchronizedService implements StockManagementService {
+public class SynchronizedStockService implements StockManagementService {
 
     private final NormalStockRepository normalStockRepository;
 
-    public SynchronizedService(NormalStockRepository normalStockRepository) {
+    public SynchronizedStockService(NormalStockRepository normalStockRepository) {
         this.normalStockRepository = normalStockRepository;
     }
 

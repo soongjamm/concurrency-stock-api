@@ -1,5 +1,6 @@
 package com.example.stockapi.stock._3_named_lock_mysql;
 
+import com.example.stockapi.stock.LockRepository;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.data.repository.query.Param;
@@ -7,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class NamedLockRepository {
+public class NamedLockRepository implements LockRepository {
 
     private final JdbcTemplate jdbcTemplate;
 

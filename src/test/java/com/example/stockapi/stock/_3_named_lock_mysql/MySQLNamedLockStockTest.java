@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class MySQLNamedLockStockTest extends ConcurrencyTestTemplate {
 
     @Autowired
-    private NamedLockFacade namedLockFacade;
+    private NamedLockStockFacade namedLockStockFacade;
 
     @Test
     @DisplayName("Named Lock (MySQL get_lock()) : 4sec 959ms")
@@ -19,7 +19,7 @@ class MySQLNamedLockStockTest extends ConcurrencyTestTemplate {
 
         for (int i = 0; i < initQuantity; i++) {
             es.submit(() -> {
-                namedLockFacade.deduction("상품1");
+                namedLockStockFacade.deduction("상품1");
                 countDownLatch.countDown();
             });
         }

@@ -1,16 +1,17 @@
 package com.example.stockapi.stock._2_pessimistic_optimistic_lock;
 
+import com.example.stockapi.stock.StockFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OptimisticLockFacade {
+public class OptimisticLockStockFacade implements StockFacade {
 
-    private static final Logger LOG = LoggerFactory.getLogger(OptimisticLockFacade.class);
-    private final OptimisticLockService stockService;
+    private static final Logger LOG = LoggerFactory.getLogger(OptimisticLockStockFacade.class);
+    private final OptimisticLockStockService stockService;
 
-    public OptimisticLockFacade(OptimisticLockService stockService) {
+    public OptimisticLockStockFacade(OptimisticLockStockService stockService) {
         this.stockService = stockService;
     }
 

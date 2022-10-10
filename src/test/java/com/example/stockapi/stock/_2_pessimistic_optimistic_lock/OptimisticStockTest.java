@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 class OptimisticStockTest extends ConcurrencyTestTemplate {
 
     @Autowired
-    private OptimisticLockFacade optimisticLockFacade;
+    private OptimisticLockStockFacade optimisticLockStockFacade;
 
     @Test
     @DisplayName("optimistic lock : 4sec 898ms")
@@ -20,7 +20,7 @@ class OptimisticStockTest extends ConcurrencyTestTemplate {
         for (int i = 0; i < initQuantity; i++) {
             es.submit(() -> {
                 try {
-                    optimisticLockFacade.deduction("상품1");
+                    optimisticLockStockFacade.deduction("상품1");
                 } finally {
                     countDownLatch.countDown();
                 }

@@ -13,10 +13,10 @@ import static org.assertj.core.api.Assertions.*;
 class StockServiceTest extends ConcurrencyTestTemplate {
 
     @Autowired
-    private SynchronizedService synchronizedService;
+    private SynchronizedStockService synchronizedStockService;
 
     @Autowired
-    private SynchronizedWithTransactionalService synchronizedWithTransactionalService;
+    private SynchronizedWithTransactionalStockService synchronizedWithTransactionalStockService;
 
     @Test
     @DisplayName("synchronized : 약 760ms (동시성제어 안하면 약 4xx ms)")
@@ -25,7 +25,7 @@ class StockServiceTest extends ConcurrencyTestTemplate {
 
         for (int i = 0; i < initQuantity; i++) {
             es.submit(() -> {
-                synchronizedService.deduction("상품1");
+                synchronizedStockService.deduction("상품1");
                 countDownLatch.countDown();
             });
         }
@@ -43,7 +43,7 @@ class StockServiceTest extends ConcurrencyTestTemplate {
 
         for (int i = 0; i < initQuantity; i++) {
             es.submit(() -> {
-                synchronizedWithTransactionalService.deduction("상품1");
+                synchronizedWithTransactionalStockService.deduction("상품1");
                 countDownLatch.countDown();
             });
         }

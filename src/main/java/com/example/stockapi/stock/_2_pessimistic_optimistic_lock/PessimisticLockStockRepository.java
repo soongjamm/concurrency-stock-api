@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.LockModeType;
 
 @Repository
-public interface PessimisticLockRepository extends StockRepository {
+public interface PessimisticLockStockRepository extends StockRepository {
 
     @Override
     @Lock(LockModeType.PESSIMISTIC_WRITE)
